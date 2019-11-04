@@ -4,7 +4,7 @@ weight: 3
 ---
 
 Select elements can require quite a bit of boiler plate code to automate.
-To reduce this and make your tests cleaner, there is a
+To reduce this, and make your tests cleaner, there is a
 `Select` class in the Selenium support package.
 To use it, you will need the following import statement:
 
@@ -23,6 +23,9 @@ include Selenium::WebDriver::Support
   {{< / code-panel >}}
   {{< code-panel language="javascript" >}}
 // We don't have a JavaScript code sample yet -  Help us out and raise a PR  
+  {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+import org.openqa.selenium.support.ui.Select
   {{< / code-panel >}}
 {{< / code-tab >}}
 
@@ -46,7 +49,11 @@ select_element = driver.find_element(id: 'selectElementID')
 select_object = Select(select_element)
   {{< / code-panel >}}
   {{< code-panel language="javascript" >}}
-// We don't have a JavaScript code sample yet -  Help us out and raise a PR  
+// We don't have a JavaScript code sample yet -  Help us out and raise a PR
+  {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+val selectElement = driver.findElement(By.id("selectElementID"))
+val selectObject = new Select(selectElement)
   {{< / code-panel >}}
 {{< / code-tab >}}
 
@@ -100,7 +107,17 @@ select_object.select_by(:value, 'value1')
 select_object.select_by(:text, 'Bread')
   {{< / code-panel >}}
   {{< code-panel language="javascript" >}}
-// We don't have a JavaScript code sample yet -  Help us out and raise a PR  
+// We don't have a JavaScript code sample yet -  Help us out and raise a PR
+  {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+// Select an <option> based upon the <select> element's internal index
+selectObject.selectByIndex(1)
+
+// Select an <option> based upon its value attribute
+selectObject.selectByValue("value1")
+
+// Select an <option> based upon its text
+selectObject.selectByVisibleText("Bread")
   {{< / code-panel >}}
 {{< / code-tab >}}
 
@@ -132,7 +149,14 @@ all_selected_options = select_object.selected_options
 first_selected_option = select_object.first_selected_option
   {{< / code-panel >}}
   {{< code-panel language="javascript" >}}
-// We don't have a JavaScript code sample yet -  Help us out and raise a PR  
+// We don't have a JavaScript code sample yet -  Help us out and raise a PR
+  {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+// Return a List<WebElement> of options that have been selected
+val allSelectedOptions = selectObject.allSelectedOptions
+
+// Return a WebElement referencing the first selection option found by walking down the DOM
+val firstSelectedOption = selectObject.firstSelectedOption
   {{< / code-panel >}}
 {{< / code-tab >}}
 
@@ -157,7 +181,11 @@ all_available_options = select_object.options
 all_available_options = select_object.options
   {{< / code-panel >}}
   {{< code-panel language="javascript" >}}
-// We don't have a JavaScript code sample yet -  Help us out and raise a PR  
+// We don't have a JavaScript code sample yet -  Help us out and raise a PR
+  {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+// Return a List<WebElement> of options that the <select> element contains
+val allAvailableOptions = selectObject.options
   {{< / code-panel >}}
 {{< / code-tab >}}
 
@@ -207,7 +235,20 @@ select_object.deselect_by(:text, 'Bread')
 select_object.deselect_all
   {{< / code-panel >}}
   {{< code-panel language="javascript" >}}
-// We don't have a JavaScript code sample yet -  Help us out and raise a PR  
+// We don't have a JavaScript code sample yet -  Help us out and raise a PR
+  {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+// Deselect an <option> based upon the <select> element's internal index
+selectObject.deselectByIndex(1)
+
+// Deselect an <option> based upon its value attribute
+selectObject.deselectByValue("value1")
+
+// Deselect an <option> based upon its text
+selectObject.deselectByVisibleText("Bread")
+
+// Deselect all selected <option> elements
+selectObject.deselectAll()
   {{< / code-panel >}}
 {{< / code-tab >}}
 
@@ -228,6 +269,9 @@ does_this_allow_multiple_selections = select_object.is_multiple
 does_this_allow_multiple_selections = select_object.multiple?
   {{< / code-panel >}}
   {{< code-panel language="javascript" >}}
-// We don't have a JavaScript code sample yet -  Help us out and raise a PR  
+// We don't have a JavaScript code sample yet -  Help us out and raise a PR
+  {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+val doesThisAllowMultipleSelections = selectObject.isMultiple
   {{< / code-panel >}}
 {{< / code-tab >}}

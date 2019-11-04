@@ -18,8 +18,8 @@ WebElement:
 WebDriver driver = new FirefoxDriver();
 driver.get("http://www.google.com");
 WebElement searchForm = driver.findElement(By.tagName("form"));
-WebElement searchbox = driver.findElement(By.name("q"));
-searchbox.sendKeys("webdriver");
+WebElement searchBox = searchForm.findElement(By.name("q"));
+searchBox.sendKeys("webdriver");
   {{< / code-panel >}}
   {{< code-panel language="python" >}}
 driver = Firefox()
@@ -29,10 +29,30 @@ search_box = search_form.find_element_by_name("q")
 search_box.send_keys("webdriver")
   {{< / code-panel >}}
   {{< code-panel language="csharp" >}}
-// We don't have a C# code sample yet -  Help us out and raise a PR
+IWebDriver driver = new FirefoxDriver();
+driver.Url = "http://www.google.com";
+IWebElement searchForm = driver.FindElement(By.TagName("form"));
+IWebElement searchbox = driver.FindElement(By.Name("q"));
+searchbox.SendKeys("webdriver");
   {{< / code-panel >}}
   {{< code-panel language="ruby" >}}
-# We don't have a Ruby code sample yet -  Help us out and raise a PR  
+require 'selenium-webdriver'
+driver = Selenium::WebDriver.for :firefox
+begin
+  # Navigate to URL
+  driver.get 'https://google.com'
+
+  # Get and store DOM element '<form>'
+  search_form = driver.find_element(name: 'f')
+
+  # Get search box element from webElement 'form'
+  search_bar = search_form.find_element(name: 'q')
+
+  # Perform action using WebElement
+  search_bar.send_keys 'Webdriver'
+ensure
+  driver.quit
+end
   {{< / code-panel >}}
   {{< code-panel language="javascript" >}}
 let {Builder, By} = require('selenium-webdriver');
@@ -53,6 +73,13 @@ let searchBar = await searchForm.findElement(By.name('q'));
 await searchBar.sendKeys('Webdriver');
 
 })();
+  {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+val driver = ChromeDriver()
+driver.get("http://www.google.com")
+val searchForm = driver.findElement(By.tagName("form"))
+val searchBox = searchForm.findElement(By.name("q"))
+searchBox.sendKeys("webdriver")
   {{< / code-panel >}}
 {{< / code-tab >}}
 

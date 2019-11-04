@@ -19,18 +19,7 @@
       <guid>https://seleniumhq.github.io/docs/site/zh-cn/support_packages/browser_navigation/</guid>
       <description>页面需要从英语翻译为简体中文。 您熟悉英语与简体中文吗？帮助我们翻译它，通过 pull requests 给我们！
  There are commands for various webpage loading actions:
-Java Python C# Ruby JavaScript // Navigate to a URL (both of the statements below are // functionally equivalent). driver.get(&amp;#34;https://www.google.com&amp;#34;); driver.navigate().to(&amp;#34;https://www.google.com&amp;#34;); // Go forward one page in the browser (if you&amp;#39;re not on the // last page that was viewed). driver.navigate().forward(); // Go back one page in the browser (if you&amp;#39;re not on the // first page that was viewed).</description>
-    </item>
-    
-    <item>
-      <title>Browsers</title>
-      <link>https://seleniumhq.github.io/docs/site/zh-cn/getting_started_with_webdriver/browsers/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://seleniumhq.github.io/docs/site/zh-cn/getting_started_with_webdriver/browsers/</guid>
-      <description>页面需要从英语翻译为简体中文。 您熟悉英语与简体中文吗？帮助我们翻译它，通过 pull requests 给我们！
- Consumer browsers The Selenium framework officially supports the following browsers:
-   Browser Maintainer Versions Supported     Chromium Chromium All versions   Firefox Mozilla 54 and newer   Internet Explorer Selenium 6 and newer   Opera Opera Chromium / Presto 10.5 and newer   Safari Apple 10 and newer    Specialised browsers There is also a set of specialized browsers out there typically used in development environments.</description>
+Java Python C# Ruby JavaScript Kotlin // Navigate to a URL (both of the statements below are // functionally equivalent). driver.get(&amp;#34;https://www.google.com&amp;#34;); driver.navigate().to(&amp;#34;https://www.google.com&amp;#34;); // Go forward one page in the browser (if you&amp;#39;re not on the // last page that was viewed). driver.navigate().forward(); // Go back one page in the browser (if you&amp;#39;re not on the // first page that was viewed).</description>
     </item>
     
     <item>
@@ -153,6 +142,18 @@ IDE IDE 是一个 Firefox 插件， 可以用来记录 Firefox 本身的测试�
     </item>
     
     <item>
+      <title>浏览器</title>
+      <link>https://seleniumhq.github.io/docs/site/zh-cn/getting_started_with_webdriver/browsers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://seleniumhq.github.io/docs/site/zh-cn/getting_started_with_webdriver/browsers/</guid>
+      <description>  页面需要从英语翻译为简体中文。 您熟悉英语与简体中文吗？帮助我们翻译它，通过 pull requests 给我们！
+ 消费级浏览器 当前Selenium框架支持以下浏览器:
+   浏览器 维护者 支持的版本     Chromium Chromium 所有版本   Firefox Mozilla 54及以上版本   Internet Explorer Selenium 6及以上版本   Opera Opera Chromium / Presto 10.5及以上版本   Safari Apple 10及以上版本    专业级浏览器 还有一些通常在开发环境中使用的专业级浏览器。 我们也可以使用其中一些浏览器实现自动化的目的， Selenium支持以下专业驱动:
+   驱动名称 用途 维护者     HtmlUnitDriver Rhino支持的无头浏览器模拟器 Selenium项目组    </description>
+    </item>
+    
+    <item>
       <title>Components of a Grid</title>
       <link>https://seleniumhq.github.io/docs/site/zh-cn/grid/components_of_a_grid/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -192,7 +193,7 @@ WebDriver&amp;rsquo;s aim is to emulate a real user&amp;rsquo;s interaction with
       <guid>https://seleniumhq.github.io/docs/site/zh-cn/driver_idiosyncrasies/driver_specific_capabilities/</guid>
       <description>页面需要从英语翻译为简体中文。 您熟悉英语与简体中文吗？帮助我们翻译它，通过 pull requests 给我们！
  Firefox Define Capabilities using FirefoxOptions FirefoxOptions is the new way to define capabilities for the Firefox browser and should generally be used in preference to DesiredCapabilities.
-Java Python C# Ruby JavaScript FirefoxOptions options = new FirefoxOptions(); options.addPreference(&amp;#34;network.proxy.type&amp;#34;, 0); driver = new RemoteWebDriver(options);   from selenium.webdriver.firefox.options import Options options = Options() options.headless = True driver = webdriver.Firefox(options=options)   // We don&amp;#39;t have a C# code sample yet - Help us out and raise a PR    # We don&amp;#39;t have a Ruby code sample yet - Help us out and raise a PR   // We don&amp;#39;t have a JavaScript code sample yet - Help us out and raise a PR      Setting a custom profile It is possible to create a custom profile for Firefox as demonstrated below.</description>
+Java Python C# Ruby JavaScript Kotlin FirefoxOptions options = new FirefoxOptions(); options.addPreference(&amp;#34;network.proxy.type&amp;#34;, 0); driver = new RemoteWebDriver(options);   from selenium.webdriver.firefox.options import Options options = Options() options.headless = True driver = webdriver.Firefox(options=options)   var options = new FirefoxOptions(); options.</description>
     </item>
     
     <item>
@@ -219,17 +220,6 @@ Java Python C# Ruby JavaScript FirefoxOptions options = new FirefoxOptions(); op
     </item>
     
     <item>
-      <title>On test automation</title>
-      <link>https://seleniumhq.github.io/docs/site/zh-cn/introduction/on_test_automation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://seleniumhq.github.io/docs/site/zh-cn/introduction/on_test_automation/</guid>
-      <description>页面需要从英语翻译为简体中文。 您熟悉英语与简体中文吗？帮助我们翻译它，通过 pull requests 给我们！
- First, start by asking yourself whether or not you really need to use a browser. Odds are good that, at some point, if you&amp;rsquo;re working on a complex web application, you will need to open a browser and actually test it.
-Functional end-user tests such as Selenium tests are expensive to run, however. Furthermore, they typically require substantial infrastructure to be in place to be run effectively.</description>
-    </item>
-    
-    <item>
       <title>Remote WebDriver client</title>
       <link>https://seleniumhq.github.io/docs/site/zh-cn/remote_webdriver/remote_webdriver_client/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -237,7 +227,7 @@ Functional end-user tests such as Selenium tests are expensive to run, however. 
       <guid>https://seleniumhq.github.io/docs/site/zh-cn/remote_webdriver/remote_webdriver_client/</guid>
       <description>页面需要从英语翻译为简体中文。 您熟悉英语与简体中文吗？帮助我们翻译它，通过 pull requests 给我们！
  First, we need to connect to the RemoteWebDriver. We do this by pointing the URL to the address of the server running our tests. In order to customize our configuration, we set desired capabilities. Below is an example of instantiating a remote WebDriver object pointing to our remote web server, www.example.com, running our tests on Firefox.
-Java Python C# Ruby JavaScript FirefoxOptions firefoxOptions = new FirefoxOptions(); WebDriver driver = new RemoteWebDriver(new URL(&amp;#34;http://www.</description>
+Java Python C# Ruby JavaScript Kotlin FirefoxOptions firefoxOptions = new FirefoxOptions(); WebDriver driver = new RemoteWebDriver(new URL(&amp;#34;http://www.</description>
     </item>
     
     <item>
@@ -269,7 +259,28 @@ Line length When editing the documentation’s source, which is written in plain
       
       <guid>https://seleniumhq.github.io/docs/site/zh-cn/support_packages/working_with_colours/</guid>
       <description>页面需要从英语翻译为简体中文。 您熟悉英语与简体中文吗？帮助我们翻译它，通过 pull requests 给我们！
- You will occasionally want to validate the colour of something as part of your tests; the problem is that colour definitions on the web are not constant. Wouldn&amp;rsquo;t it be nice if there was an easy way to compare a HEX representation of a colour with an RGB representation of a colour, or an RGBA representation of a colour with a HSLA representation of a colour?</description>
+ You will occasionally want to validate the colour of something as part of your tests; the problem is that colour definitions on the web are not constant. Would it not be nice if there was an easy way to compare a HEX representation of a colour with a RGB representation of a colour, or a RGBA representation of a colour with a HSLA representation of a colour?</description>
+    </item>
+    
+    <item>
+      <title>关于测试自动化</title>
+      <link>https://seleniumhq.github.io/docs/site/zh-cn/introduction/on_test_automation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://seleniumhq.github.io/docs/site/zh-cn/introduction/on_test_automation/</guid>
+      <description>首先，问问自己是否真的需要使用浏览器。 在某些情况下，如果您正在开发一个复杂的 web 应用程序， 您需要打开一个浏览器并进行实际测试，这种可能性是很大的。
+然而，诸如 Selenium 之类的功能性最终用户测试运行起来很昂贵。 此外，它们通常需要大量的基础设施才能有效运行。 经常问问自己，您想要测试的东西是否可以使用更轻量级的测试方法（如单元测试）完成， 还是使用较低级的方法完成，这是一个很好的规则。
+一旦确定您正在进行Web浏览器测试业务， 并且您的 Selenium 环境已经准备好开始编写测试， 您通常会执行以下三个步骤的组合：
+ 设置数据 执行一组离散的操作 评估结果  您需要尽可能缩短这些步骤; 一到两个操作在大多数时间内应该足够了。 浏览器自动化具有“脆弱”的美誉， 但实际上那是因为用户经常对它要求过高。 在后面的章节中，我们将回到您可以使用的技术， 为了缓解测试中明显的间歇性问题， 特别是如何克服 浏览器 和 WebDriver 之间的竞争条件。
+通过保持测试简短并仅在您完全没有替代方案时使用Web浏览器，您可以用最小的代码片段来完成很多测试。
+Selenium测试的一个显著优势是，它能够从用户的角度测试应用程序的所有组件（从后端到前端）。 因此，换句话说，虽然功能测试运行起来可能很昂贵，但它们同时也包含了大量关键业务部分。
+测试要求 如前所述，Selenium 测试运行起来可能很昂贵。 在多大程度上取决于您正在运行测试的浏览器， 但历史上浏览器的行为变化太大，以至于通常是针对多个浏览器进行交叉测试的既定目标。
+Selenium 允许您在多个操作系统上的多个浏览器上运行相同的指令， 但是对所有可能的浏览器、它们的不同版本以及它们所运行的许多操作系统的枚举将很快成为一项繁重的工作。
+让我们从一个例子开始 Larry 写了一个网站，允许用户订购他们自己定制的独角兽。
+一般的工作流程(我们称之为“幸福之路”)是这样的:
+ 创建一个账户 配置他们的独角兽 添加到购物车 检验并付款 给出关于他们独角兽的反馈  编写一个宏大的 Selenium 脚本来执行所有这些操作是很诱人的 — 很多人都会尝试这样做。 抵制诱惑！ 这样做会导致测试: a) 需要很长时间; b) 会受到一些与页面呈现时间问题有关的常见问题的影响; c) 如果失败，它不会给出一个简洁的、“可检查”的方法来诊断出了什么问题。
+测试此场景的首选策略是将其分解为一系列独立的、快速的测试，每个测试都有一个存在的“理由”。
+假设您想测试第二步： 配置您的独角兽。 它将执行以下操作:</description>
     </item>
     
     <item>
@@ -321,7 +332,7 @@ Selenium WebDriver is a completely different approach to browser automation, pre
       <guid>https://seleniumhq.github.io/docs/site/zh-cn/getting_started_with_webdriver/locating_elements/</guid>
       <description>页面需要从英语翻译为简体中文。 您熟悉英语与简体中文吗？帮助我们翻译它，通过 pull requests 给我们！
  Locating one element One of the most fundamental techniques to learn when using WebDriver is how to find elements on the page. WebDriver offers a number of built-in selector types, amongst them finding an element by its ID attribute:
-Java Python C# Ruby JavaScript WebElement cheese = driver.findElement(By.id(&amp;#34;cheese&amp;#34;));   driver.find_element_by_id(&amp;#34;cheese&amp;#34;)   IWebElement element = driver.FindElement(By.Id(&amp;#34;cheese&amp;#34;));   driver.find_element(id: &amp;#34;cheese&amp;#34;)   const cheese = await driver.</description>
+Java Python C# Ruby JavaScript Kotlin WebElement cheese = driver.findElement(By.id(&amp;#34;cheese&amp;#34;));   driver.find_element_by_id(&amp;#34;cheese&amp;#34;)   IWebElement element = driver.FindElement(By.Id(&amp;#34;cheese&amp;#34;));   driver.find_element(id: &amp;#34;cheese&amp;#34;)   const cheese = await driver.</description>
     </item>
     
     <item>
@@ -354,7 +365,7 @@ For web applications, the automation of this testing can be done directly with S
       <guid>https://seleniumhq.github.io/docs/site/zh-cn/support_packages/working_with_select_elements/</guid>
       <description>页面需要从英语翻译为简体中文。 您熟悉英语与简体中文吗？帮助我们翻译它，通过 pull requests 给我们！
  Select elements can require quite a bit of boiler plate code to automate. To reduce this and make your tests cleaner, there is a Select class in the Selenium support package. To use it, you will need the following import statement:
-Java Python C# Ruby JavaScript import org.openqa.selenium.support.ui.Select;   from selenium.webdriver.support.select import Select   // We don&amp;#39;t have a C# code sample yet - Help us out and raise a PR    include Selenium::WebDriver::Support   // We don&amp;#39;t have a JavaScript code sample yet - Help us out and raise a PR      You are then able to create a Select object using a WebElement that references a &amp;lt;select&amp;gt; element.</description>
+Java Python C# Ruby JavaScript Kotlin import org.openqa.selenium.support.ui.Select;   from selenium.webdriver.support.select import Select   // We don&amp;#39;t have a C# code sample yet - Help us out and raise a PR    include Selenium::WebDriver::Support   // We don&amp;#39;t have a JavaScript code sample yet - Help us out and raise a PR    import org.</description>
     </item>
     
     <item>
@@ -396,7 +407,7 @@ The ideal practice is to use the APIs that email providers offer, or in the case
       <guid>https://seleniumhq.github.io/docs/site/zh-cn/support_packages/mouse_and_keyboard_actions_in_detail/</guid>
       <description>页面需要从英语翻译为简体中文。 您熟悉英语与简体中文吗？帮助我们翻译它，通过 pull requests 给我们！
  Suppose you have an arbitrary web element e:
-Java Python C# Ruby JavaScript WebElement e = driver.findElement(By.id(&amp;#34;testElement&amp;#34;));   e = driver.find_element_by_id(&amp;#34;testElement&amp;#34;)   // We don&amp;#39;t have a C# code sample yet - Help us out and raise a PR    # We don&amp;#39;t have a Ruby code sample yet - Help us out and raise a PR   // We don&amp;#39;t have a JavaScript code sample yet - Help us out and raise a PR      You can simulate mouse clicking on e if it&amp;rsquo;s visible and has a height and width that are greater than 0:</description>
+Java Python C# Ruby JavaScript Kotlin WebElement e = driver.findElement(By.id(&amp;#34;testElement&amp;#34;));   e = driver.find_element_by_id(&amp;#34;testElement&amp;#34;)   // We don&amp;#39;t have a C# code sample yet - Help us out and raise a PR    # We don&amp;#39;t have a Ruby code sample yet - Help us out and raise a PR   // We don&amp;#39;t have a JavaScript code sample yet - Help us out and raise a PR    val element = driver.</description>
     </item>
     
     <item>
@@ -407,7 +418,7 @@ Java Python C# Ruby JavaScript WebElement e = driver.findElement(By.id(&amp;#34;
       <guid>https://seleniumhq.github.io/docs/site/zh-cn/getting_started_with_webdriver/performing_actions_on_the_aut/</guid>
       <description>页面需要从英语翻译为简体中文。 您熟悉英语与简体中文吗？帮助我们翻译它，通过 pull requests 给我们！
  You can set an element&amp;rsquo;s text using the sendKeys method as follows:
-Java Python C# Ruby JavaScript String name = &amp;#34;Charles&amp;#34;; driver.findElement(By.name(&amp;#34;name&amp;#34;)).sendKeys(name);   name = &amp;#34;Charles&amp;#34; driver.find_element_by_name(&amp;#34;name&amp;#34;).send_keys(name)   string name = &amp;#34;Charles&amp;#34;; driver.FindElement(By.Name(&amp;#34;name&amp;#34;)).SendKeys(name);   name = &amp;#34;Charles&amp;#34; driver.find_element(name: &amp;#34;name&amp;#34;).send_keys(name)   const name = &amp;#34;Charles&amp;#34;; await driver.findElement(By.name(&amp;#39;name&amp;#39;)).sendKeys(name);     Some web applications use JavaScript libraries to add drag-and-drop functionality.</description>
+Java Python C# Ruby JavaScript Kotlin String name = &amp;#34;Charles&amp;#34;; driver.findElement(By.name(&amp;#34;name&amp;#34;)).sendKeys(name);   name = &amp;#34;Charles&amp;#34; driver.find_element_by_name(&amp;#34;name&amp;#34;).send_keys(name)   string name = &amp;#34;Charles&amp;#34;; driver.FindElement(By.Name(&amp;#34;name&amp;#34;)).SendKeys(name);   name = &amp;#34;Charles&amp;#34; driver.find_element(name: &amp;#34;name&amp;#34;).send_keys(name)   const name = &amp;#34;Charles&amp;#34;; await driver.findElement(By.name(&amp;#39;name&amp;#39;)).sendKeys(name);   val name = &amp;#34;Charles&amp;#34; driver.findElement(By.name(&amp;#34;name&amp;#34;)).sendKeys(name)     Some web applications use JavaScript libraries to add drag-and-drop functionality.</description>
     </item>
     
     <item>
@@ -575,7 +586,7 @@ FirefoxProfile profile = new FirefoxProfile(new File(&amp;#34;pathToFirefoxProfi
       <guid>https://seleniumhq.github.io/docs/site/zh-cn/webdriver/web_element/</guid>
       <description>页面需要从英语翻译为简体中文。 您熟悉英语与简体中文吗？帮助我们翻译它，通过 pull requests 给我们！
  Represents a DOM element. WebElements can be found by searching from the document root using a WebDriver instance, or by searching under another WebElement:
-Java Python C# Ruby JavaScript WebDriver driver = new FirefoxDriver(); driver.get(&amp;#34;http://www.google.com&amp;#34;); WebElement searchForm = driver.findElement(By.tagName(&amp;#34;form&amp;#34;)); WebElement searchbox = driver.findElement(By.name(&amp;#34;q&amp;#34;)); searchbox.sendKeys(&amp;#34;webdriver&amp;#34;);   driver = Firefox() driver.get(&amp;#34;http://www.google.com&amp;#34;) search_form = driver.find_element_by_tag_name(&amp;#34;form&amp;#34;) search_box = search_form.find_element_by_name(&amp;#34;q&amp;#34;) search_box.send_keys(&amp;#34;webdriver&amp;#34;)   // We don&amp;#39;t have a C# code sample yet - Help us out and raise a PR    # We don&amp;#39;t have a Ruby code sample yet - Help us out and raise a PR   let {Builder, By} = require(&amp;#39;selenium-webdriver&amp;#39;); driver = new Builder().</description>
+Java Python C# Ruby JavaScript Kotlin WebDriver driver = new FirefoxDriver(); driver.get(&amp;#34;http://www.google.com&amp;#34;); WebElement searchForm = driver.findElement(By.tagName(&amp;#34;form&amp;#34;)); WebElement searchBox = searchForm.findElement(By.name(&amp;#34;q&amp;#34;)); searchBox.sendKeys(&amp;#34;webdriver&amp;#34;);   driver = Firefox() driver.get(&amp;#34;http://www.google.com&amp;#34;) search_form = driver.find_element_by_tag_name(&amp;#34;form&amp;#34;) search_box = search_form.find_element_by_name(&amp;#34;q&amp;#34;) search_box.send_keys(&amp;#34;webdriver&amp;#34;)   IWebDriver driver = new FirefoxDriver(); driver.</description>
     </item>
     
     <item>
@@ -586,7 +597,7 @@ Java Python C# Ruby JavaScript WebDriver driver = new FirefoxDriver(); driver.ge
       <guid>https://seleniumhq.github.io/docs/site/zh-cn/webdriver/keyboard/</guid>
       <description>Represents a KeyBoard event. KeyBoard actions are performed by using low-level interface which allows us to provide virtualized device input to the web browser.
 sendKeys The sendKeys types a key sequence in DOM element even if modifier key sequence is encountered.
-Java Python C# Ruby JavaScript // We don&amp;#39;t have a Java code sample yet - Help us out and raise a PR    // We don&amp;#39;t have a Python code sample yet - Help us out and raise a PR   // We don&amp;#39;t have a C# code sample yet - Help us out and raise a PR    // We don&amp;#39;t have a Ruby code sample yet - Help us out and raise a PR   const {Builder, By, Key} = require(&amp;#39;selenium-webdriver&amp;#39;); (async function example() { let driver = await new Builder().</description>
+Java Python C# Ruby JavaScript Kotlin import org.openqa.selenium.By; import org.openqa.selenium.Keys; import org.openqa.selenium.WebDriver; import org.openqa.selenium.firefox.FirefoxDriver; public class HelloSelenium { public static void main(String[] args) { WebDriver driver = new FirefoxDriver(); try { // Navigate to Url  driver.</description>
     </item>
     
     <item>

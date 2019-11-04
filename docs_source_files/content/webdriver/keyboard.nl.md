@@ -18,22 +18,59 @@ The sendKeys types a key sequence in DOM element even if modifier key sequence i
 
 {{< code-tab >}}
   {{< code-panel language="java" >}}
-// We don't have a Java code sample yet -  Help us out and raise a PR
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class HelloSelenium {
+    public static void main(String[] args) {
+        WebDriver driver = new FirefoxDriver();
+        try {
+            // Navigate to Url
+            driver.get("https://google.com");
+
+            // Enter text "q" and perform keyboard action "Enter"
+            driver.findElement(By.name("q")).sendKeys("q" + Keys.ENTER);
+        } finally {
+            driver.quit();
+        }
+    }
+}
   {{< / code-panel >}}
   {{< code-panel language="python" >}}
-// We don't have a Python code sample yet -  Help us out and raise a PR
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+driver = webdriver.Firefox()
+
+# Navigate to url
+driver.get("http://www.google.com")
+
+# Enter "webdriver" text and perform "ENTER" keyboard action
+driver.find_element_by_name("q").send_keys("webdriver"+Keys.ENTER)
   {{< / code-panel >}}
   {{< code-panel language="csharp" >}}
 // We don't have a C# code sample yet -  Help us out and raise a PR
   {{< / code-panel >}}
   {{< code-panel language="ruby" >}}
-// We don't have a Ruby code sample yet -  Help us out and raise a PR
+require 'selenium-webdriver'
+driver = Selenium::WebDriver.for :firefox
+begin
+  # Navigate to URL
+  driver.get 'https://google.com'
+
+  # Enter text "cheese" and perform keyboard action "Enter"
+  driver.find_element(name: 'q').send_keys 'cheese', :return
+
+ensure
+  driver.quit
+end
   {{< / code-panel >}}
   {{< code-panel language="javascript" >}}
 const {Builder, By, Key} = require('selenium-webdriver');
 
 (async function example() {
-    let driver = await new Builder().forBrowser('chrome').build();
+    let driver = await new Builder().forBrowser('firefox').build();
 
     try {
         // Navigate to Url
@@ -46,5 +83,28 @@ const {Builder, By, Key} = require('selenium-webdriver');
         await driver.quit();
     }
 })();
+  {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+import org.openqa.selenium.By
+import org.openqa.selenium.Keys
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.ChromeDriver
+
+class HelloSelenium {
+
+    fun main() {
+        driver = ChromeDriver()
+        try {
+            // Navigate to Url
+            driver.get("https://google.com")
+
+            // Enter text "q" and perform keyboard action "Enter"
+            driver.findElement(By.name("q")).sendKeys("q" + Keys.ENTER)
+        } finally {
+            driver.quit()
+        }
+    }
+}
   {{< / code-panel >}}
 {{< / code-tab >}}

@@ -4,7 +4,7 @@ weight: 2
 ---
 
 Through WebDriver, Selenium supports all major browsers on the market
-such as Chrom(ium), Firefox, Internet Explorer, Opera, and Safari.
+such as Chrome/Chromium, Firefox, Internet Explorer, Opera, and Safari.
 Where possible, WebDriver drives the browser
 using the browser's built-in support for automation,
 although not all browsers have official support for remote control.
@@ -29,9 +29,9 @@ for getting you started with the different browsers.
 ### Adding Executables to your PATH
 Most drivers require an extra executable for Selenium to communicate
 with the browser. You can manually specify where the executable lives
-before starting WebDriver, but this can make your tests less portable,
+before starting WebDriver, but this can make your tests less portable
 as the executables will need to be in the same place on every machine,
-or included within your test code repository.
+or include the executable within your test code repository.
 
 By adding a folder containing WebDriver's binaries to your system's
 path, Selenium will be able to locate the additional binaries without
@@ -58,7 +58,7 @@ export PATH=$PATH:/opt/WebDriver/bin >> ~/.profile
   Close all open command prompts and open a new one.
   Type out the name of one of the binaries
   in the folder you created in the previous step,
-  e.g: 
+  e.g.: 
 
   ```shell
   chromedriver
@@ -71,7 +71,7 @@ Starting ChromeDriver 2.25.426935 (820a95b0b81d33e42712f9198c215f703412e1a1) on 
 Only local connections are allowed.
 ```
 
-You can regain control of your command prompt by pressing <kbd>Ctrl + C</kbd>
+You can regain control of your command prompt by pressing <kbd>Ctrl+C</kbd>
 
 
 ### Quick reference
@@ -102,7 +102,7 @@ $ echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
 
-To include chromedriver on the path if it isn't already,
+To include chromedriver on the path, if it is not already,
 make sure you include the chromedriver binary's parent directory.
 The following line will set the `PATH` environmental variable
 its current content, plus an additional path added after the colon:
@@ -155,6 +155,12 @@ const chrome = require('selenium-webdriver/chrome');
     //your code inside this block
 })();
   {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.chrome.ChromeDriver
+
+val driver: WebDriver = ChromeDriver()
+  {{< / code-panel >}}
 {{< / code-tab >}}
 
 Remember that you have to set the path to the chromedriver executable.
@@ -176,11 +182,14 @@ Selenium::WebDriver::Chrome.driver_path = "/path/to/chromedriver"
   {{< code-panel language="javascript" >}}
 chrome.setDefaultService(new chrome.ServiceBuilder('path/to/chromedriver').build());
   {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver")
+  {{< / code-panel >}}
 {{< / code-tab >}}
 
 The chromedriver is implemented as a WebDriver remote server
-that by exposing Chrome's internal automation proxy interface
-instructs the browser what to do.
+that instructs the browser what to do by exposing Chrome's 
+internal automation proxy interface.
 
 
 ### Firefox
@@ -231,6 +240,12 @@ const {Builder} = require('selenium-webdriver');
    //your code inside this block
 })();
   {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.Firefox.FirefoxDriver
+
+val driver: WebDriver = FirefoxDriver()
+  {{< / code-panel >}}
 {{< / code-tab >}}
 
 If you prefer not to set geckodriver's location using PATH,
@@ -252,6 +267,9 @@ Selenium::WebDriver::Firefox.driver_path = "/path/to/geckodriver"
   {{< code-panel language="javascript" >}}
 // We don't have a JavaScript code sample yet -  Help us out and raise a PR
   {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+System.setProperty("webdriver.gecko.driver", "/path/to/geckodriver")
+  {{< / code-panel >}}
 {{< / code-tab >}}
 
 It is also possible to set the property at run time:
@@ -271,13 +289,13 @@ and specifying a desired capability of **marionette** as
 
 Edge is Microsoft's newest browser, included with Windows 10 and Server 2016.
 Updates to Edge are bundled with major Windows updates,
-so you'll need to download a binary which matches the build number of your 
+so you will need to download a binary which matches the build number of your 
 currently installed build of Windows.
 The [Edge Developer site](//developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/)
 contains links to all the available binaries. Bugs against the EdgeDriver 
 implementation can be raised with 
 [Microsoft](//developer.microsoft.com/en-us/microsoft-edge/platform/issues/?page=1&q=webdriver). 
-If you'd like to run tests against Edge, but aren't running Windows 10, Microsoft
+If you would like to run tests against Edge, but are not running Windows 10, Microsoft
 offer free VMs for testers on the [Edge Developer site](//developer.microsoft.com/en-us/microsoft-edge/tools/vms/).
 
 {{< code-tab >}}
@@ -317,6 +335,12 @@ const {Builder} = require('selenium-webdriver');
    //your code inside this block
 })();
   {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.edge.EdgeDriver
+
+val driver: WebDriver = EdgeDriver()
+  {{< / code-panel >}}
 {{< / code-tab >}}
 
 If Edge driver is not present in your path, you can set the path using 
@@ -337,6 +361,9 @@ Selenium::WebDriver::Edge.driver_path = "C:/path/to/MicrosoftWebDriver.exe"
   {{< / code-panel >}}
   {{< code-panel language="javascript" >}}
 // We don't have a JavaScript code sample yet -  Help us out and raise a PR
+  {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+System.setProperty("webdriver.edge.driver", "C:/path/to/MicrosoftWebDriver.exe")
   {{< / code-panel >}}
 {{< / code-tab >}}
 
@@ -392,6 +419,12 @@ const {Builder} = require('selenium-webdriver');
    //your code inside this block
 })();
   {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.ie.InternetExplorerDriver
+
+val driver: WebDriver = InternetExplorerDriver()
+  {{< / code-panel >}}
 {{< / code-tab >}}
 
 If Internet Explorer driver is not present in your path, you can set the path 
@@ -413,11 +446,14 @@ Selenium::WebDriver::IE.driver_path = "C:/path/to/IEDriver.exe"
   {{< code-panel language="javascript" >}}
 // We don't have a JavaScript code sample yet -  Help us out and raise a PR
   {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+System.setProperty("webdriver.ie.driver", "C:/path/to/IEDriver.exe")
+  {{< / code-panel >}}
 {{< / code-tab >}}
 
 Microsoft also offer a WebDriver binary for
 [Internet Explorer 11 on Windows 7 & 8.1](//www.microsoft.com/en-gb/download/details.aspx?id=44069). 
-It has not been updated since 2014 and is based of a draft version of the 
+It has not been updated since 2014 and is based on a draft version of the 
 W3 specification. [Jim Evans](//jimevansmusic.blogspot.co.uk/2014/09/using-internet-explorer-webdriver.html)
 has an excellent writeup on Microsoft's implementation.
 
@@ -463,6 +499,12 @@ driver = Selenium::WebDriver.for :opera
   {{< / code-panel >}}
   {{< code-panel language="javascript" >}}
 // We don't have a JavaScript code sample yet -  Help us out and raise a PR
+  {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.opera.OperaDriver
+
+val driver: WebDriver = OperaDriver()
   {{< / code-panel >}}
 {{< / code-tab >}}
 
@@ -521,6 +563,12 @@ const {Builder} = require('selenium-webdriver');
    //your code inside this block
 })();
   {{< / code-panel >}}
+  {{< code-panel language="kotlin" >}}
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.safari.SafariDriver
+
+val driver: WebDriver = SafariDriver()
+  {{< / code-panel >}}
 {{< / code-tab >}}
 
 
@@ -550,7 +598,7 @@ PhantomJS is a headless browser based on Webkit, albeit a version much older
 than that used by Google Chrome or Safari. Whilst historically a popular 
 choice, it would now be wise to avoid PhantomJS. The project has been 
 unmaintained 
-[since the 5th of August](//groups.google.com/forum/#!topic/phantomjs/9aI5d-LDuNE), 
+[since the 5th of August 2017](//groups.google.com/forum/#!topic/phantomjs/9aI5d-LDuNE), 
 so whilst the web will continue to change, PhantomJS will not be updated. 
 This was after Google announced the ability to run Chrome headlessly, 
 something also now offered by Mozilla's Firefox.
