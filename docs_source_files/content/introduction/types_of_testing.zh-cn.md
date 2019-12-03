@@ -1,121 +1,76 @@
 ---
-title: "Types of testing"
+title: "测试类型"
 weight: 3
 ---
 
-{{% notice info %}}
-<i class="fas fa-language"></i> 页面需要从英语翻译为简体中文。
-您熟悉英语与简体中文吗？帮助我们翻译它，通过 pull requests 给我们！
-{{% /notice %}}
+## 验收测试
 
-## Acceptance testing
-This type of test is done in order to determine if a product's
-feature matches its requirements.
-This generally involves the customer's feedback or specification.
+这种类型的测试是为了确定产品的特性是否符合其需求。这通常涉及到客户的反馈或规范。
 
-For web applications, the automation of this testing can be done
-directly with Selenium by simulating user expected behavior.
-This simulation could be done by record/playback or through the
-different supported languages as explained in this documentation.
-Note: Acceptance testing is a subtype of **_functional testing_**,
-which some people might also refer to.
+对于Web应用程序，可以通过模拟用户期望的行为直接使用 Selenium 来完成此测试的自动化。可以通过记录/回放或通过本文档中说明的不同受支持的语言来完成此模拟。注意：验收测试是**_功能测试_**的子类型，有些人可能还会提到。
 
-### Functional testing
-This type of test is done in order to determine if a product's
-feature functions properly, without issues.
+### 功能测试
 
-This generally include: the tests work without errors
-(404, exceptions...), in an usable way (right redirections),
-in an accessible way and matching its specifications
-(see **_acceptance testing_** above).
+进行这种类型的测试是为了确定产品的功能是否正常运行而没有问题。
 
-For web applications, the automation of this testing can be
-done directly with Selenium by simulating expected returns.
-This simulation could be done by record/playback or through
-the different supported languages as explainedin this documentation.
+这通常包括：测试以无故障（404，异常…），可用（正确重定向），可访问的方式并匹配其规格进行工作（请参见上面的**_验收测试_**）。
 
-### Performance testing
-As its name indicates, performance tests are done in order
-to measure how well an application is performing.
+对于 Web 应用程序，可以通过模拟预期收益直接使用 Selenium 来完成此测试的自动化。可以通过记录/回放或通过本文档中介绍的不同受支持的语言来完成此模拟。
 
-There are two main sub-types for performance testing:
+### 性能测试
 
-#### Load testing
-Load testing is done in order to verify how well the
-application works under different defined loads
-(usually a particular number of users connected at once)
+顾名思义，进行性能测试是为了衡量应用程序的性能。
 
-#### Stress testing
-Stress testing is done in order to verify how well the
-application works under stress (or above the maximum supported load).
+性能测试有两种主要的子类型：
 
-Generally, performance tests are done by executing a
-number of Selenium written tests simulating different users
-hitting a particular function on the web app and
-retrieving some meaningful measurements.
+#### 负载测试
 
-This is generally done by other tools that retrieve the metrics.
-One such tools is **_JMeter_**.
+进行负载测试是为了验证应用程序在不同定义的负载（通常是同时连接特定数量的用户）下的运行状况。
 
-For a web application, details to measure include:
-throughput, latency, data loss, individual component loading times...
+#### 压力测试
 
-Note: All browsers have a performance tab in their
-developers' tools section (accessible by pressing F12)
+进行压力测试是为了验证应用程序在压力下（或高于最大支持负载）的运行状况。
 
-Note 2: is a subtype of **_non-functional testing_**
-as this is generally measured per system and not per function/feature.
+通常，性能测试是通过执行大量 Selenium 编写的测试来完成的，这些测试模拟不同的用户在 web 应用程序上访问特定的功能并获取一些有意义的度量结果。
 
-### Regression testing
-This testing is generally done after a change, fix or feature addition.
+通常，这是由其他检索指标的工具完成的。**_JMeter_** 就是这样一种工具。
 
-In order to ensure that the change has not broken any of the existing
-functionality, some already executed tests are executed again.
+对于Web应用程序，要测量的详细信息包括：吞吐量，延迟，数据丢失，单个组件加载时间…
 
-The set of re-executed test can be full or partial
-and can include several different types, depending
-on the application and development team.
+Note：所有浏览器的开发人员工具部分均具有“性能”选项卡（按F12即可访问）
 
-### Test driven development (TDD)
-Rather than a test type per se, TDD is an iterative
-development methodology in which tests drive the design of a feature.
+Note 2：是**_非功能测试_**的子类型， 因为它通常是按系统而不是按功能/功能进行测量。
 
-Each cycle starts by creating a set of unit tests that
-the feature should pass (which should fail their first time executed).
+### 回归测试
 
-After this, development takes place in order to make the tests pass.
-The tests are executed again starting another cycle
-and this process continues until all tests are passing.
+该测试通常在更改，修复或添加功能之后进行。
 
-This aims to speed up the development of an application
-based on the fact that defects are less costly the earlier they are found.
+为了确保更改不会破坏任何现有功能，将再次执行一些已经执行的测试。
 
-### Behavior-driven development (BDD)
-BDD is also an iterative development methodology
-based on above (TDD) in which the goal is to involve
-all the parties in the development of an application.
+重新执行的测试集可以是全部或部分，并且可以包括几种不同的类型，具体取决于应用程序和开发团队。
 
-Each cycle starts by creating some specification
-(which should fail). Then create the failing unit
-tests (which should also fail) and then create the development.
+### 测试驱动开发（TDD）
 
-This cycle is repeated until all type of tests are passing.
+TDD 本身不是测试类型，而是一种迭代开发方法，其中测试驱动功能的设计。
 
-In order to do so, a specification language is
-used. It should be understandable by all parties and
-simple, standard and explicit.
-Most tools use **_Gherkin_** as this language.
+每个周期都从创建功能应通过的一组单元测试开始（这将使它们第一次执行失败）。
 
-The goal is to be able to detect even more errors
-than TDD by targeting potential acceptance errors
-too and make communication between parties smoother.
+此后，进行开发以使测试通过。测试将在另一个周期开始再次执行，并且此过程将一直持续到所有测试通过为止。
 
-A set of tools are currently available in order
-to write the specifications and match them with code functions,
-such as **_Cucumber_** or **_SpecFlow._**
+这样做的目的是基于这样的事实，即缺陷越早发现成本越低，从而加快了应用程序的开发。
 
-A set of tools are built on top of Selenium to make this process
-even faster by directly transform the BDD specifications into
-executable code.
-Some of these are: **_JBehave, Capybara and Robot Framework_**.
+### 行为驱动开发(BDD)
 
+BDD也是基于上述(TDD)的迭代开发方法，其目标是让应用程序开发的所有参与方都参与进来。
+
+每个周期从创建一些规范开始(应该失败)。然后创建失败的单元测试(也应该失败)，然后创建开发。
+
+这个循环一直重复，直到所有类型的测试都通过为止。
+
+为此，使用了规范语言。各方都要理解，简单、规范、明确。大多数工具使用**_Gherkin_**作为这种语言。
+
+其目标是通过瞄准潜在的接受错误来检测比 TDD 更多的错误，并使各方之间的通信更加顺畅。
+
+目前有一组工具可用来编写规范并将其与代码函数(如**_Cucumber_**或**_SpecFlow._**)进行匹配。
+
+一组工具构建在 Selenium 之上，通过直接将 BDD 规范转换为可执行代码，使这个过程更快。其中包括: **_JBehave, Capybara and Robot Framework_**。
