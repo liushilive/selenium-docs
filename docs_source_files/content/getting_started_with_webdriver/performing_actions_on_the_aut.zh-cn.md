@@ -1,14 +1,9 @@
 ---
-title: "Performing actions on the AUT*"
+title: "对AUT执行操作*"
 weight: 4
 ---
 
-{{% notice info %}}
-<i class="fas fa-language"></i> 页面需要从英语翻译为简体中文。
-您熟悉英语与简体中文吗？帮助我们翻译它，通过 pull requests 给我们！
-{{% /notice %}}
-
-You can set an element's text using the sendKeys method as follows:
+您可以使用 sendKeys 方法设置元素的文本，如下所示：
 
 {{< code-tab >}}
   {{< code-panel language="java" >}}
@@ -37,9 +32,7 @@ driver.findElement(By.name("name")).sendKeys(name)
   {{< / code-panel >}}
 {{< / code-tab >}}
 
-Some web applications use JavaScript libraries to add drag-and-drop
-functionality. The following is a basic example of dragging one
-element onto another element:
+一些Web应用程序使用 JavaScript 库来添加拖放功能。以下是将一个元素拖到另一个元素上的基本示例：
 
 {{< code-tab >}}
   {{< code-panel language="java" >}}
@@ -75,9 +68,9 @@ Actions(driver).dragAndDrop(source, target).build().perform()
   {{< / code-panel >}}
 {{< / code-tab >}}
 
-### Clicking on an element
+### 点击一个元素
 
-You can click on an element using the click method:
+您可以使用click方法单击一个元素：
 
 {{< code-tab >}}
   {{< code-panel language="java" >}}
@@ -100,4 +93,4 @@ driver.findElement(By.cssSelector("input[type='submit']")).click()
   {{< / code-panel >}}
 {{< / code-tab >}}
 
-***AUT**: Application under test
+***AUT**: 被测应用程序
